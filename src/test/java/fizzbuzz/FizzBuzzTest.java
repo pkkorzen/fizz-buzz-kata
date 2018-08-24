@@ -1,5 +1,6 @@
 package fizzbuzz;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -17,7 +18,7 @@ public class FizzBuzzTest {
         String result = FizzBuzz.printRange(1,5);
         assertEquals("1\n2\nFizz\n4\nBuzz", result);
     }
-
+    @Ignore
     @Test
     public void printingFizzForNumber3AndBuzzForNumber5PlusFizzBuzzIfNumberDividesBy3And5(){
         String result = FizzBuzz.printRange(1,15);
@@ -31,5 +32,11 @@ public class FizzBuzzTest {
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowIllegalArgumenExceptionWhenToIsMoreThan100(){
         FizzBuzz.printRange(16,101);
+    }
+
+    @Test
+    public void printingFizzIfDividesBy3OrContains3(){
+        String result = FizzBuzz.printRange(1,13);
+        assertEquals("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\nFizz", result);
     }
 }
