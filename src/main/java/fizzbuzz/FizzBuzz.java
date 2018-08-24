@@ -8,12 +8,18 @@ public class FizzBuzz {
         }
         StringBuilder fizzBuzzSB = new StringBuilder();
         for (int i = from; i <= to; i++) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                fizzBuzzSB.append("FizzBuzz").append("\n");
-            } else if (i % 3 == 0 || Integer.toString(i).contains("3")) {
-                fizzBuzzSB.append("Fizz").append("\n");
+            if (i % 3 == 0 || Integer.toString(i).contains("3")) {
+                if (i % 5 == 0 || Integer.toString(i).contains("5")) {
+                    fizzBuzzSB.append("FizzBuzz").append("\n");
+                } else {
+                    fizzBuzzSB.append("Fizz").append("\n");
+                }
             } else if (i % 5 == 0 || Integer.toString(i).contains("5")) {
-                fizzBuzzSB.append("Buzz").append("\n");
+                if (i % 3 == 0 || Integer.toString(i).contains("3")) {
+                    fizzBuzzSB.append("FizzBuzz").append("\n");
+                } else {
+                    fizzBuzzSB.append("Buzz").append("\n");
+                }
             } else {
                 fizzBuzzSB.append(i).append("\n");
             }

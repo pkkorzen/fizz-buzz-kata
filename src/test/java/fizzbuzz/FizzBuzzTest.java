@@ -39,10 +39,16 @@ public class FizzBuzzTest {
         String result = FizzBuzz.printRange(1,13);
         assertEquals("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\nFizz", result);
     }
-
+    @Ignore
     @Test
     public void printingFizzIfDividesBy5OrContains5(){
         String result = FizzBuzz.printRange(58,60);
         assertEquals("Buzz\nBuzz\nFizzBuzz", result);
+    }
+
+    @Test
+    public void printingFizzBuzzIfEitherDividesBy3OrContains3AndEitherDividesBy5OrContains5(){
+        String result = FizzBuzz.printRange(51,55);
+        assertEquals("FizzBuzz\nBuzz\nFizzBuzz\nFizzBuzz\nBuzz", result);
     }
 }
