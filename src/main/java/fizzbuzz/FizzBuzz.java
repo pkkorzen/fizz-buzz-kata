@@ -2,19 +2,20 @@ package fizzbuzz;
 
 public class FizzBuzz {
 
-    public static String printRange(int from, int to){
+    public static String printRange(int from, int to) {
         StringBuilder fizzBuzzSB = new StringBuilder();
-        for(int i = from; i <= to; i++){
-            if(i%3 == 0){
+        for (int i = from; i <= to; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                fizzBuzzSB.append("FizzBuzz").append("\n");
+            } else if (i % 3 == 0) {
                 fizzBuzzSB.append("Fizz").append("\n");
-            } else if(i%5==0){
+            } else if (i % 5 == 0) {
                 fizzBuzzSB.append("Buzz").append("\n");
-            }
-            else {
+            } else {
                 fizzBuzzSB.append(i).append("\n");
             }
         }
-        fizzBuzzSB.deleteCharAt(fizzBuzzSB.length()-1);
+        fizzBuzzSB.deleteCharAt(fizzBuzzSB.length() - 1);
         return fizzBuzzSB.toString();
     }
 }
