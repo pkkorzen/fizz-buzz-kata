@@ -23,4 +23,8 @@ public class FizzBuzzTest {
         String result = FizzBuzz.printRange(1,15);
         assertEquals("1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz", result);
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumenExceptionWhenToIsLessThanFrom(){
+        FizzBuzz.printRange(16,15);
+    }
 }

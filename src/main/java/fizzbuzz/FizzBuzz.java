@@ -3,6 +3,9 @@ package fizzbuzz;
 public class FizzBuzz {
 
     public static String printRange(int from, int to) {
+        if(to < from){
+            throw new IllegalArgumentException("Podano zły zakres. Od musi być mniejsze niż do");
+        }
         StringBuilder fizzBuzzSB = new StringBuilder();
         for (int i = from; i <= to; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
