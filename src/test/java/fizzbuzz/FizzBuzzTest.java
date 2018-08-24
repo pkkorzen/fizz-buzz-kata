@@ -27,4 +27,9 @@ public class FizzBuzzTest {
     public void shouldThrowIllegalArgumenExceptionWhenToIsLessThanFrom(){
         FizzBuzz.printRange(16,15);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumenExceptionWhenToIsMoreThan100(){
+        FizzBuzz.printRange(16,101);
+    }
 }

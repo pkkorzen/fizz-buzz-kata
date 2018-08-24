@@ -3,8 +3,8 @@ package fizzbuzz;
 public class FizzBuzz {
 
     public static String printRange(int from, int to) {
-        if(to < from){
-            throw new IllegalArgumentException("Podano zły zakres. Od musi być mniejsze niż do");
+        if(to < from || to > 100){
+            throw new IllegalArgumentException("Podano zły zakres. Od musi być mniejsze niż do. Do nie może być większe niż 100");
         }
         StringBuilder fizzBuzzSB = new StringBuilder();
         for (int i = from; i <= to; i++) {
