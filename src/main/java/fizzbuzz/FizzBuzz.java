@@ -8,18 +8,14 @@ public class FizzBuzz {
         }
         StringBuilder fizzBuzzSB = new StringBuilder();
         for (int i = from; i <= to; i++) {
-            if (isFizz(i)) {
-                if (isBuzz(i)) {
-                    fizzBuzzSB.append("FizzBuzz").append("\n");
-                } else {
-                    fizzBuzzSB.append("Fizz").append("\n");
-                }
-            } else if (isBuzz(i)) {
-                if (isFizz(i)) {
-                    fizzBuzzSB.append("FizzBuzz").append("\n");
-                } else {
-                    fizzBuzzSB.append("Buzz").append("\n");
-                }
+            if (isFizzBuzz(i)) {
+                fizzBuzzSB.append("FizzBuzz").append("\n");
+            }
+            else if(isFizz(i)) {
+                fizzBuzzSB.append("Fizz").append("\n");
+            }
+            else if(isBuzz(i)) {
+                fizzBuzzSB.append("Buzz").append("\n");
             } else {
                 fizzBuzzSB.append(i).append("\n");
             }
@@ -38,5 +34,9 @@ public class FizzBuzz {
 
     private static boolean isFizz(int i) {
         return i % 3 == 0 || Integer.toString(i).contains("3");
+    }
+
+    private static boolean isFizzBuzz(int i){
+        return isFizz(i) && isBuzz(i);
     }
 }
