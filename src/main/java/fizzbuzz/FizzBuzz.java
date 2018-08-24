@@ -8,14 +8,14 @@ public class FizzBuzz {
         }
         StringBuilder fizzBuzzSB = new StringBuilder();
         for (int i = from; i <= to; i++) {
-            if (i % 3 == 0 || Integer.toString(i).contains("3")) {
-                if (i % 5 == 0 || Integer.toString(i).contains("5")) {
+            if (isFizz(i)) {
+                if (isBuzz(i)) {
                     fizzBuzzSB.append("FizzBuzz").append("\n");
                 } else {
                     fizzBuzzSB.append("Fizz").append("\n");
                 }
-            } else if (i % 5 == 0 || Integer.toString(i).contains("5")) {
-                if (i % 3 == 0 || Integer.toString(i).contains("3")) {
+            } else if (isBuzz(i)) {
+                if (isFizz(i)) {
                     fizzBuzzSB.append("FizzBuzz").append("\n");
                 } else {
                     fizzBuzzSB.append("Buzz").append("\n");
@@ -24,7 +24,19 @@ public class FizzBuzz {
                 fizzBuzzSB.append(i).append("\n");
             }
         }
-        fizzBuzzSB.deleteCharAt(fizzBuzzSB.length() - 1);
+        deleteLastNewLine(fizzBuzzSB);
         return fizzBuzzSB.toString();
+    }
+
+    private static void deleteLastNewLine(StringBuilder fizzBuzzSB) {
+        fizzBuzzSB.deleteCharAt(fizzBuzzSB.length() - 1);
+    }
+
+    private static boolean isBuzz(int i) {
+        return i % 5 == 0 || Integer.toString(i).contains("5");
+    }
+
+    private static boolean isFizz(int i) {
+        return i % 3 == 0 || Integer.toString(i).contains("3");
     }
 }
