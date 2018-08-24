@@ -12,7 +12,7 @@ public class FizzBuzz {
                 fizzBuzzSB.append("FizzBuzz").append("\n");
             } else if (i % 3 == 0 || Integer.toString(i).contains("3")) {
                 fizzBuzzSB.append("Fizz").append("\n");
-            } else if (i % 5 == 0) {
+            } else if (i % 5 == 0 || Integer.toString(i).contains("5")) {
                 fizzBuzzSB.append("Buzz").append("\n");
             } else {
                 fizzBuzzSB.append(i).append("\n");
