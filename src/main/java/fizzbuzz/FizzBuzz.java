@@ -1,13 +1,17 @@
 package fizzbuzz;
 
 public class FizzBuzz {
+
     public static String printRange(int from, int to){
         StringBuilder fizzBuzzSB = new StringBuilder();
         for(int i = from; i <= to; i++){
             if(i%3 == 0){
-                fizzBuzzSB.append("Fizz" +"\n");
-            } else {
-                fizzBuzzSB.append(i +"\n");
+                fizzBuzzSB.append("Fizz").append("\n");
+            } else if(i%5==0){
+                fizzBuzzSB.append("Buzz").append("\n");
+            }
+            else {
+                fizzBuzzSB.append(i).append("\n");
             }
         }
         fizzBuzzSB.deleteCharAt(fizzBuzzSB.length()-1);
